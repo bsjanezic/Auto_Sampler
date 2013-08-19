@@ -6,10 +6,19 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		D30D86DD17C13BFB00DB2CE2 /* Sample_on_hour.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = Sample_on_hour.ino; sourceTree = "<group>"; };
+		D30D86DE17C13C5B00DB2CE2 /* Sample_on_5.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = Sample_on_5.ino; sourceTree = "<group>"; };
+		D30D86DF17C13C8500DB2CE2 /* sample_and_move.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = sample_and_move.ino; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		D30D86D617C13BC600DB2CE2 = {
 			isa = PBXGroup;
 			children = (
+				D30D86DD17C13BFB00DB2CE2 /* Sample_on_hour.ino */,
+				D30D86DE17C13C5B00DB2CE2 /* Sample_on_5.ino */,
+				D30D86DF17C13C8500DB2CE2 /* sample_and_move.ino */,
 			);
 			sourceTree = "<group>";
 		};

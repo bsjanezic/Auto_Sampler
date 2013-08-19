@@ -19,7 +19,10 @@ const int enablePin = 10;
 //pragram variables
 int pumpDuration = 20000;
 int count = 0;                    //variable used by runtime loop to keep track of position
-int sampleCount = 24;      //number of samples
+int sampleCount = 24;              //number of samples
+/*set time interval here Pump and move loop will trigger on. For example if five minutes (12:00, 12:05, 12:10....) is desired
+this should be "5", if every 2 (12:00, 12:02 ...) enter "2", for hour enter 60 */
+int timeInterval = 5;
 const int buttonPin = A1;
 int posArray[]= {0, 8, 16, 25, 33, 41, 50, 58, 66, 75, 83, 91, 100, 108, 116, 125, 133, 141, 150, 158,
     166, 175, 183, 192};
@@ -51,23 +54,8 @@ void loop()                      //loop runs continuously until power off
     //Serial.print(now.hour(), DEC);
     //Serial.println(now.minute(),DEC);
     Serial.println(now.minute(), DEC);      //print current minute
-    
-    if( (
-         (now.minute()  == 5)  ||     
-         (now.minute()  == 10) ||
-         (now.minute()  == 15) ||
-         (now.minute()  == 20) ||
-         (now.minute()  == 25) ||
-         (now.minute()  == 30) ||
-         (now.minute()  == 35) ||
-         (now.minute()  == 40) ||
-         (now.minute()  == 45) ||
-         (now.minute()  == 50) ||
-         (now.minute()  == 55) ||
-         (now.minute()  == 00))           //this checks if on a 5 minute interval and less than 24 bottles
-                        &&
-            (count < sampleCount))
-         {     
+    int activateCycle = now.minute() % timeInterval;
+    if((activateCycle == 0) && (count < sampleCount)) {
         int sampleSteps = posArray[count];       // get step count from positoon array
         int sampleStepsReverse = -1*sampleSteps;  //reverse = negative directions
         digitalWrite(enablePin, LOW);             //activate motor
