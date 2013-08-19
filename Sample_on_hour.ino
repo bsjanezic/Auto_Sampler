@@ -21,8 +21,8 @@ int pumpDuration = 20000;
 int count = 0;                    //variable used by runtime loop to keep track of position
 int sampleCount = 24;      //number of samples
 const int buttonPin = A1;
-int posArray[24]= {8, 16, 25, 33, 41, 50, 58, 66, 75, 83, 91, 100, 108, 116, 125, 133, 141, 150, 158,
-    166, 175, 183, 192, 0};
+int posArray[24]= {0, 8, 16, 25, 33, 41, 50, 58, 66, 75, 83, 91, 100, 108, 116, 125, 133, 141, 150, 158,
+    166, 175, 183, 192};
 void setup()              // this loop runs when first powered on
 {
     //setup of pins
